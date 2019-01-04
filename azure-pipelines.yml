@@ -7,8 +7,10 @@ jobs:
   steps:
   - script: |
       choco install msys2 --params="/InstallDir:%CD:~0,2%\msys64 /NoUpdate"
+    displayName: 'Installing msys2'
+  - script: |
       pacman -S bison
-    displayName: 'Installing dependencies'
+    displayName: 'Installing bison'
   - script: |
       buildall.bat
     displayName: 'Build all bits'
