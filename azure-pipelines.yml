@@ -9,7 +9,9 @@ jobs:
       choco install msys2 --params="/InstallDir:%CD:~0,2%\msys64 /NoUpdate"
     displayName: 'Installing msys2'
   - script: |
-      pacman -S bison
+      echo %PATH%
+      dir %CD:~0,2%\msys64\usr\bin
+      %CD:~0,2%\msys64\usr\bin\pacman --noconfirm -S bison
     displayName: 'Installing bison'
   - script: |
       buildall.bat
