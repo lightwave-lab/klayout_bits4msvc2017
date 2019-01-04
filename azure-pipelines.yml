@@ -6,6 +6,7 @@ jobs:
 
   steps:
   - script: |
+      choco install msys2 --params="/InstallDir:%CD:~0,2%\msys64 /NoUpdate"
       pacman -S bison
     displayName: 'Installing dependencies'
   - script: |
